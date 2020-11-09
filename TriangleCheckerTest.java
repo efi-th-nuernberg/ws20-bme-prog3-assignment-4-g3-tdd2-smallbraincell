@@ -15,8 +15,15 @@ public class TriangleCheckerTest {
         TriangleChecker.TriangleType type = TriangleChecker.checkTriangle(a, b, c);
 
         // Assert
-        assertEquals(TriangleChecker.TriangleType.NORMAL, type);
+        assertEquals(TriangleChecker.TriangleType.NORMAL, TriangleChecker.checkTriangle(3, 2, 4));
+        assertEquals(TriangleChecker.TriangleType.EQUILATERAL, TriangleChecker.checkTriangle(3, 3, 3));
+        assertEquals(TriangleChecker.TriangleType.NONE, TriangleChecker.checkTriangle(-1, 0, -1));
+        assertEquals(TriangleChecker.TriangleType.ISOSCELES, TriangleChecker.checkTriangle(5, 4, 5));
 
+        assertEquals(TriangleChecker.TriangleType.NORMAL,TriangleChecker.checkTriangle(1, 1, 3));
     }
 
 }
+
+
+

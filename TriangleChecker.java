@@ -8,6 +8,7 @@ public class TriangleChecker {
     ISOSCELES,  // Gleichschenklig
     EQUILATERAL // Gleichseitig
   }
+  
 
 
   public static void main(String[] args) {
@@ -47,8 +48,49 @@ public class TriangleChecker {
 
   // Analyse der Dreiecksart
   public static TriangleType checkTriangle(float a, float b, float c) {
-    return TriangleType.NONE;
-  }
+    if (a > 0 && b > 0 && c > 0) {  
+      if (a == b && b == c) { 
+       return TriangleType.EQUILATERAL;
 
+      } else if ( a == b || a == c || b == c) { 
+        return TriangleType.ISOSCELES;
+      }
+        return TriangleType.NORMAL;
+    
 
+    } else {
+     return TriangleType.NONE;
+    }
 }
+/*
+
+
+afgs
+satz des pütakorass
+längste Seite: a*a + b*b = c*c -> c ist größte Seite
+
+if((a*a + b*b = c*c) || (a*a + c*c = b*b) || (b*b + c*c = a*a))  //längste Seite checken
+
+if(a < b + c || b < a + c || c < a + b)
+---------------------------------------
+if(a*a + b*b = c*c) {
+  //c ist die längste Seite
+  if(!(a < b + c)){
+    NONE
+  }
+}
+if(a*a + c*c = b*b) {
+  //b ist die längste Seite
+  if(!(b < a + c )){
+    NONE
+  }
+}
+if(b*b + c*c = a*a) {
+  //a ist die längste Seite
+  if(!(c < a + b)){
+    NONE
+  }
+}
+
+*/
+} 
