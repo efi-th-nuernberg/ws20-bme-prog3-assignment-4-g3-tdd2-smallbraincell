@@ -7,7 +7,7 @@ public class TriangleCheckerTest {
     public void testValidTriangleNormal() {
 
         // Arrange
-        float a = 20;
+        float a = 10;
         float b = 30;
         float c = 40;
 
@@ -16,15 +16,15 @@ public class TriangleCheckerTest {
 
         // Assert
         
-        assertEquals(TriangleChecker.TriangleType.NORMAL, TriangleChecker.checkTriangle(a, b, b));
+        assertEquals(TriangleChecker.TriangleType.NORMAL, TriangleChecker.checkTriangle(a, b, c));
        
     }       
     @Test
     public void testValidTriangleISOSCELES() {
 
         // Arrange
-        float a = 30;
-        float b = 30;
+        float a = 20;
+        float b = 20;
         float c = 40;
 
         // Act
