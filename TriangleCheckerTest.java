@@ -82,5 +82,20 @@ public class TriangleCheckerTest {
         
         assertEquals(TriangleChecker.TriangleType.NONE, TriangleChecker.checkTriangle(a, b, c));
        
-    }    
+    } 
+    public void testValidTriangleTwoSidesAreOne() {
+
+        // Arrange
+        float a = 1;
+        float b = 1;
+        float c = 1000;
+
+        // Act
+        TriangleChecker.TriangleType type = TriangleChecker.checkTriangle(a, b, c);
+
+        // Assert
+        
+        assertEquals(TriangleChecker.TriangleType.NONE, TriangleChecker.checkTriangle(a, b, c));
+       
+    }   
 }
