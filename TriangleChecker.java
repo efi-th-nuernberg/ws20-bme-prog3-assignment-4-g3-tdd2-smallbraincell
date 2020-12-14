@@ -5,9 +5,10 @@ public class TriangleChecker {
   public enum TriangleType {
     NONE, 
     NORMAL,
-    ISOSCELES,  // Gleichschenklig
-    EQUILATERAL // Gleichseitig
+    ISOSCELES,  
+    EQUILATERAL 
   }
+  
 
 
   public static void main(String[] args) {
@@ -47,8 +48,17 @@ public class TriangleChecker {
 
   // Analyse der Dreiecksart
   public static TriangleType checkTriangle(float a, float b, float c) {
-    return TriangleType.NONE;
-  }
+      if (((a > 0) && (b > 0) && (c > 0)) && ((a + b >= c) && (b + c >= a ) && (a + c >= b))) {               
 
-
+        if (a == b && b == c) { 
+          return TriangleType.EQUILATERAL; 
+        } else if ( a == b || a == c || b == c) { 
+          return TriangleType.ISOSCELES; 
+        } else {
+          return TriangleType.NORMAL; 
+        }
+      } else {
+         return TriangleType.NONE; 
+    }
+  } 
 }
